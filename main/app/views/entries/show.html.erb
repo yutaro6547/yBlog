@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @entry.name %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>本文:</strong>
   <%= @entry.body %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to '編集する', edit_entry_path(@entry) %> |
+<%= link_to '戻る', entries_path %>
