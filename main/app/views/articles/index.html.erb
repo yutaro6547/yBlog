@@ -1,21 +1,29 @@
 <h1>記事一覧</h1>
 
+<button type="button" class="btn btn-default btn-sm btn-block">
 <%= link_to '新規記事作成', new_article_path %>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>本文</th>
-    <th colspan="2"></th>
-  </tr>
+</button>
 
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.text %></td>
-    <td><%= link_to '詳細', article_path(article) %></td>
-    <td><%= link_to '編集', edit_article_path(article) %></td>
-    <td><%= link_to '削除', article_path(article),
-                    method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか？' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>タイトル</th>
+        <th>本文</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to '詳細', article_path(article) %></td>
+          <td><%= link_to '編集', edit_article_path(article) %></td>
+          <td><%= link_to '削除', article_path(article),
+                          method: :delete, data: { confirm: '本当に削除してもよろしいでしょうか？' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
