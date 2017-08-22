@@ -1,18 +1,18 @@
-<p>
-  <strong>Title:</strong>
+<h1>
+  <strong>
   <%= @article.title %>
-</p>
+  </strong>
+</h1>
 
 <p>
-  <strong>Text:</strong>
   <%= @article.text %>
 </p>
 
-<h2>Comments</h2>
+<h2>コメント</h2>
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<h2>コメントする</h2>
 <%= render "comments/form" %>
 
-<%= link_to 'Back', articles_path %>
-<%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to '戻る', articles_path %>
+<%= link_to '編集', edit_article_path(@article) %>
